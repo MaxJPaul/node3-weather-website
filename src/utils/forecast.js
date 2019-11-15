@@ -1,5 +1,7 @@
 const request = require('request');
 
+
+
 const forecast = (latitude, longitude, callback) => {
     const url = `https://api.darksky.net/forecast/d60943f536fa706b046dfbe8eba55aab/${latitude},${longitude}?units=si`;
 
@@ -12,7 +14,9 @@ const forecast = (latitude, longitude, callback) => {
             callback(undefined, {
                 summary: response.body.daily.data[0].summary,
                 temperature: response.body.currently.temperature,
-                precipProbability: response.body.currently.precipProbability
+                precipProbability: response.body.currently.precipProbability,
+                temperatureHigh: response.body.daily.data[0].temperatureHigh,
+                temperatureLow: response.body.daily[0].temperatureLow
             })
         }
     })

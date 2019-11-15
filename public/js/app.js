@@ -23,6 +23,8 @@ weatherForm.addEventListener('submit', (e) => {
                 Summary: ${data.forecast.summary}
                 Temperature: ${data.forecast.temperature}.
                 Probability of Raining: ${data.forecast.precipProbability}.
+                The highest temperature: ${data.forecast.temperatureHigh},
+                The lowest temperature: ${data.forecast.temperatureLow}
                 `
             }
         })
